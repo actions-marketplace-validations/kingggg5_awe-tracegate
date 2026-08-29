@@ -59,7 +59,7 @@ jobs:
           python -m pip install build
           python -m build
       - name: Upload distributions
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: python-distributions
           path: dist/
@@ -85,7 +85,7 @@ jobs:
       - name: Generate the canonical demo
         run: python -m awe_tracegate.cli demo --out "${{ runner.temp }}/awe-demo"
       - name: Upload canonical receipts
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: awe-cross-platform-${{ matrix.os }}
           path: |
@@ -344,7 +344,7 @@ jobs:
           test "${AWE_RECEIPT_PATH}" = "awe-gate-receipt.json"
           test -f "${AWE_RECEIPT_PATH}"
       - name: Upload atomic gate receipt
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: awe-gate-receipt
           path: awe-gate-receipt.json
